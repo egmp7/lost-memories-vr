@@ -1,0 +1,143 @@
+# This .gitignore file should be placed at the root of your Unity project directory
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore Visual Studio/MonoDevelop/JetBrains Rider generated files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.sln
+*.csproj
+*.unityproj
+*.tmproj
+*.log
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.rsp
+*.user
+*.moc
+*.wlog
+*.dep
+*.tlb
+*.tlh
+*.bak
+*.orig
+*.manifest
+*.cmap
+*.natvis
+
+# Unity generated files
+*.unitypackage
+*.prefab
+*.prefab.unitypackage
+*.asset
+*.asset.unitypackage
+
+# Ignore asset meta data files
+/[Aa]ssets/**/*.meta
+
+# Ignore build results
+/[Bb]uilds/
+/[Bb]uild/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Oo]utput/
+/[Uu]ser[Ss]ettings/
+
+# Uncomment if you have SDKs or frameworks as a submodule
+# /Assets/YourSDKPath/
+
+# Ignore crash reports, log files, and other sensitive data
+*.pidb
+*.svd
+*.userprefs
+*.pidb.meta
+*.svd.meta
+*.userprefs.meta
+/Logs
+*.log
+*.bak
+
+# Uncomment if you have Unity Cloud Build enabled
+# /[Uu]nity[Cc]loud[Bb]uild/
+
+# Ignore auto-generated JetBrains Rider Unity plugin files
+[Rr]ider[Uu]nity
+
+# Ignore Crashlytics generated files
+/[Cc]rashlytics-builds/
+/[Uu]ploads/
+
+# Ignore 3rd party assets
+/Assets/3rdPartyAssets/
+
+# Ignore compiled assemblies
+*.dll
+*.exe
+
+# Ignore code editor settings
+/.idea/
+/.vscode/
+/*.csproj
+/*.sln
+
+# Ignore Generated Plugin files
+Assets/GeneratedPlugins/
+
+# Ignore Xcode project files
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.xcworkspace/
+xcuserdata/
+# CocoaPods
+Pods/
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+fastlane/report.xml
+fastlane/Preview.html
+
+# Ignore Unity addressables
+/Assets/AddressableAssetsData/
+
+# Ignore Play mode tests results
+[Uu]nit[Tt]estResults
+[Uu]nitTests/
+
+# Ignore persistent storage files
+Persistent/
+
+# Ignore build artifacts
+Artifacts/
+
+# Ignore localization files
+LocalizedEditorAssets/
+
+# Ignore project-specific settings
+ProjectSettings/
+
+# Ignore Collab files
+/Collab/
+
+# Ignore temporary files
+[Tt]mp/
