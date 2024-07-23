@@ -141,3 +141,6 @@ ProjectSettings/
 
 # Ignore temporary files
 [Tt]mp/
+
+# Custom
+.vs
