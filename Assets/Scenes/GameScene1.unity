@@ -294,6 +294,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4005300347942566103, guid: 921e33eb5e5a87a4abc85a38e0c5d92f, type: 3}
+      propertyPath: maxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4005300347942566103, guid: 921e33eb5e5a87a4abc85a38e0c5d92f, type: 3}
       propertyPath: MasterVolume
       value: 0.8
       objectReference: {fileID: 0}
@@ -713,6 +717,10 @@ PrefabInstance:
     - target: {fileID: 4265502871271991535, guid: 6643ada22417ac2478fb941d982762a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736666527293008317, guid: 6643ada22417ac2478fb941d982762a3, type: 3}
+      propertyPath: maxDistance
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
