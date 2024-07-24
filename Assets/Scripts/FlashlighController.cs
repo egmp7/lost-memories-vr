@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class FlashlighController : MonoBehaviour
 {
+    public delegate void FlashlightPick();
+    static public event FlashlightPick onFlashlightPick;
+
     [SerializeField] Light Spotlight;
     [SerializeField] AudioClip FlashlightOnClip;
     [SerializeField] AudioClip FlashlightOffClip;
 
+    private bool isFlashlightPicked = false;
     private AudioSource audioSource;
     private bool isFlashlightActive = false;
 
@@ -41,6 +45,11 @@ public class FlashlighController : MonoBehaviour
 
     public void ToggleFlashlight()
     {
+        if (! isFlashlightPicked)
+        {
+            isFlashlightPicked = !isFlashlightPicked;
+            onFlashlightPick.Invoke();
+        }
         isFlashlightActive = !isFlashlightActive;
         Spotlight.enabled = isFlashlightActive;
         PlayAudioClip(isFlashlightActive ? FlashlightOnClip : FlashlightOffClip);
