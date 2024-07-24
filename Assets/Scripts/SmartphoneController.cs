@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class SmartphoneController : MonoBehaviour
 {
-
+    public delegate void CreepyPhoneCall();
+    static public event CreepyPhoneCall onCreepyPhoneCall;
+    
     [Header("Clips")]
     [SerializeField] AudioClip soundClip00;  // The sound clip to be played
     [SerializeField] AudioClip soundClip01;  // The sound clip to be played
@@ -101,8 +105,9 @@ public class SmartphoneController : MonoBehaviour
     {
         if (isClip01Playing && !audioSource.isPlaying)
         {
-            isClip01Playing = false;
             Debug.Log("Clip 01 Ended");
+            isClip01Playing = false;
+            onCreepyPhoneCall?.Invoke();
             // next scene
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
