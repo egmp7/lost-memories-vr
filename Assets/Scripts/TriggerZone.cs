@@ -1,63 +1,64 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerZone : MonoBehaviour
 {
-    [Header("Dependencies")]
+    [Header("On trigger Event")]
+    [SerializeField] UnityEvent UnityEvent;
     [Tooltip("Optional: Assign a GameObject to this field if needed.")]
     [SerializeField] GameObject activateTriggerZone;
 
     private GhostController ghostController;
-    private string gameObjectName;
-
     private string ghostTag = "Ghost";
 
-    // Trigger Zones
-    private string trigger01 = "Trigger01";
-    private string trigger02 = "Trigger02";
-    private string trigger03 = "Trigger03";
-    private string trigger04 = "Trigger04";
-    private string trigger05 = "Trigger05";
-    private string trigger06 = "Trigger06";
 
     private void Start()
     {
         ghostController = GameObject.FindGameObjectWithTag(ghostTag).GetComponent<GhostController>();
-        gameObjectName = gameObject.name;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObjectName == trigger01)
+        if (other.CompareTag("Player"))
         {
-            ghostController.IdleAnimation01();
+            Debug.Log(other.gameObject);
+            UnityEvent?.Invoke();
+            if (activateTriggerZone != null)
+            {
+                activateTriggerZone.SetActive(true);
+            }
+            Destroy(gameObject);
         }
-
-        if (gameObjectName == trigger02)
-        {
-            ghostController.WalkAnimation01();
-        }
-
-        if (gameObjectName == trigger03)
-        {
-            ghostController.IdleAnimation02();
-        }
-
-        if (gameObjectName == trigger04)
-        {
-            ghostController.ChaseAnimation01();
-        }
-
-        if (gameObjectName == trigger05)
-        {
-            ghostController.IdleAnimation03();
-        }
-
-        if (gameObjectName == trigger06)
-        {
-            ghostController.Deactivate();
-        }
-
-        if (activateTriggerZone != null) activateTriggerZone.SetActive(true);
-        Destroy(gameObject);
     }
+
+    public void PlayIdleAnimation01() 
+    {
+        ghostController.IdleAnimation01();
+    }
+
+    public void PlayIdleAnimation02() 
+    {
+        ghostController.IdleAnimation02();
+    }
+
+    public void PlayIdleAnimation03()
+    {
+        ghostController.IdleAnimation03();
+    }
+
+    public void PlayWalkAnimation() 
+    {
+        ghostController.WalkAnimation01();
+    }
+
+    public void PlayChaseAnimation()
+    {
+        ghostController.ChaseAnimation01();
+    }
+
+    public void Deactivate() 
+    {
+        ghostController.Deactivate();
+    }
+
 }
