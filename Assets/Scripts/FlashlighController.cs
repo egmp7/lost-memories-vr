@@ -25,6 +25,12 @@ public class FlashlighController : MonoBehaviour
 
     public void FlashlightON()
     {
+        if (!isFlashlightPicked)
+        {
+            isFlashlightPicked = !isFlashlightPicked;
+            onFlashlightPick.Invoke();
+        }
+
         if (!isFlashlightActive)
         {
             Spotlight.enabled = true;

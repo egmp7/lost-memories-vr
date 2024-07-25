@@ -3,7 +3,7 @@ using UnityEngine;
 public class Footsteps : MonoBehaviour
 {
     [SerializeField] Transform Player ;
-    [SerializeField] float frequency = 1.0f;
+    [SerializeField] [Range(0.5f, 1.5f)]float frequency = 1.0f;
 
     private Vector3 _tempPosition;
     private AudioSource _audioSource;

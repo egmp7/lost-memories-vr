@@ -14,11 +14,16 @@ public class GhostController : MonoBehaviour
     private string idleAnimation03 = "Idle03";
     private string walkAnimation01 = "Walk01";
     private string chaseAnimation01 = "Chase01";
+    private string hideAnimation = "Hide";
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        gameObject.SetActive(true);
+        animator.Play(hideAnimation);
     }
 
     public void IdleAnimation01()
